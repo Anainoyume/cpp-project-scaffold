@@ -1,0 +1,64 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "watch",
+            "dependsOn": [
+                "pnpm: watch:tsc",
+                "pnpm: watch:esbuild"
+            ],
+            "presentation": {
+                // 任务运行时不自动打开终端面板
+                "reveal": "never"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "tasks: watch-tests",
+            "dependsOn": [
+                "watch",
+                "pnpm: watch-tests"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "label": "pnpm: watch:esbuild",
+            "script": "watch:esbuild",
+            "group": "build",
+            "isBackground": true,
+            "problemMatcher": "$esbuild-watch",
+            "presentation": {
+                "group": "watch",
+                "reveal": "never"
+            }
+        },
+        {
+            "type": "npm",
+            "label": "pnpm: watch:tsc",
+            "script": "watch:tsc",
+            "group": "build",
+            "isBackground": true,
+            "problemMatcher": "$tsc-watch",
+            "presentation": {
+                "group": "watch",
+                "reveal": "never"
+            }
+        },
+        {
+            "type": "npm",
+            "label": "pnpm: watch-tests",
+            "script": "watch-tests",
+            "problemMatcher": "$tsc-watch",
+            "isBackground": true,
+            "presentation": {
+                "reveal": "never",
+                "group": "watchers"
+            },
+            "group": "build"
+        }
+    ]
+}

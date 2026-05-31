@@ -1,0 +1,13 @@
+{
+    "files.exclude": {
+        "out": false, // set this to true to hide the "out" folder with the compiled JS files
+        "dist": false // 将其设置为 true 以隐藏包含已编译 JS 文件的“dist”文件夹
+    },
+    "search.exclude": {
+        "out": true, // 将其设置为 false 以在搜索结果中包含“out”文件夹
+        "dist": true // 将其设置为 false 以在搜索结果中包含“dist”文件夹
+    },
+    "npm.packageManager": "pnpm",
+    // 关闭 tsc 任务自动检测，因为我们有 npm 脚本等必要任务
+    "typescript.tsc.autoDetect": "off"
+}
