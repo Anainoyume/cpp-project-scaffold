@@ -9,4 +9,7 @@ node_modules
 dist
 out
 
+# 不要不小心把产物提交了
+*.vsix
+
 vsc-extension-quickstart.md
