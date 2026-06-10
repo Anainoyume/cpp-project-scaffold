@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import { commandManager, CommandProvider } from '../features/commands/command-manager';
 
 type ScaffoldFile = {
 	path: string;
@@ -101,3 +102,25 @@ export async function createCppScaffold(options: CreateCppScaffoldOptions = {}):
 
 	void vscode.window.showInformationMessage(`已生成 ${createdCount} 个文件，请自行补充内容。`);
 }
+
+class CreateCppProjectCommand implements CommandProvider {
+	register(): [string, (...args: any[]) => any] {
+		return [
+			'kukka.create-cpp-project',
+			async () => {
+				const projectName = await vscode.window.showInputBox({
+					title: '创建新项目',
+					prompt: '项目名称',
+					placeHolder: 'e.g. MyProject',
+				});
+
+				if (projectName === undefined) {
+					return;
+				}
+
+				await createCppScaffold({ projectName });
+			}
+		];
+	}
+}
+commandManager.register(new CreateCppProjectCommand());

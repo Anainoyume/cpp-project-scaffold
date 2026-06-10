@@ -14,15 +14,16 @@
     "contributes": {
         "commands": [
             {
-                "command": "kukka.start",
+                "command": "kukka.create-cpp-project",
                 "title": "快速创建 C++ 项目",
+                "category": "C++脚手架",
                 "icon": "$(wrench)"
             }
         ],
         "menus": {
             "editor/title": [
                 {
-                    "command": "kukka.start",
+                    "command": "kukka.create-cpp-project",
                     "group": "navigation@10"
                 }
             ]
