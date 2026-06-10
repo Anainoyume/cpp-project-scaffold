@@ -1,3 +1,8 @@
+# .gitignore 只能阻止新文件被加入 Git，不能让已经跟踪的文件消失
+# 想要让在仓库的文件被屏蔽, 必须先取消追踪
+# git rm --cached <file-name>
+# git commit -m "..."
+
 .vscode-test
 
 node_modules
