@@ -1,0 +1,20 @@
+{
+    "config": [
+        {
+            "language": "cpp",
+            "templates": [
+                {"path": "", "template": "cpp/.clang-format.template"},
+                {"path": "", "template": "cpp/.clangd.template"},
+                {"path": "", "template": "cpp/CMakeLists.txt.template"},
+                {"path": ".vscode", "template": "cpp/settings.json.template"},
+                {"path": ".vscode", "template": "cpp/launch.json.template"},
+                {"path": ".vscode", "template": "cpp/tasks.json.template"},
+                {"path": "src", "template": "cpp/main.cpp.template"}
+            ],
+            "macro": [
+                {"name": "ProjectName", "prompt": "项目名称", "placeHolder": "e.g. MyApplication"},
+                {"name": "ExecutableName", "prompt": "可执行程序名称", "placeHolder": "e.g. App"}    
+            ]
+        }
+    ]
+}

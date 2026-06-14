@@ -10,21 +10,21 @@ set(PROJECT_SRC
 )
 set(LIB_PATH "\${CMAKE_CURRENT_SOURCE_DIR}/lib") 
 
-add_executable($ProjectName$
+add_executable($ExecutableName$
     \${PROJECT_SRC}
 )
 
 # 添加头文件和库路径
-target_include_directories($ProjectName$ PRIVATE
+target_include_directories($ExecutableName$ PRIVATE
     "include"
     "src"
 )
 
-target_link_directories($ProjectName$ PRIVATE 
+target_link_directories($ExecutableName$ PRIVATE 
     "lib"
 )
 
 # 连接库
-target_link_libraries($ProjectName$ PRIVATE
+target_link_libraries($ExecutableName$ PRIVATE
     winpthread
 )

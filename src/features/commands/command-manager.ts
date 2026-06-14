@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 
 export interface CommandProvider {
-    register() : [string, (...args: any[]) => any]
+    register(context: vscode.ExtensionContext) : [string, (...args: any[]) => any]
 }
  
 class CommandManager {
@@ -14,7 +14,7 @@ class CommandManager {
 
     init(context: vscode.ExtensionContext): void {
         for (const provider of this._list) {
-            let dispose = vscode.commands.registerCommand(...provider.register());
+            let dispose = vscode.commands.registerCommand(...provider.register(context));
             context.subscriptions.push(dispose);
         }
     }
