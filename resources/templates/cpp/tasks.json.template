@@ -5,7 +5,7 @@
             "type": "cmake",
             "command": "build",
             "targets": [
-                "$ProjectName$"
+                "$ExecutableName$"
             ],
             "group": {
                 "kind": "build",
